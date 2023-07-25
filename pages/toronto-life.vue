@@ -5,42 +5,34 @@
       <div class="project-credits">
         <div>
           <p>Art Director</p>
-          <p>Christine Dewairy</p>
-        </div>
-        <div>
-          <p>Associate Art Director</p>
           <p>Brian Wong</p>
-        </div>
-        <div>
-          <p>Photo Director</p>
-          <p>Daniel Neuhaus</p>
         </div>
       </div>
       <div v-lazy-container="{ selector: 'img' }" class="content">
         <img
-          :data-src="require('../assets/images/toronto-life/19_03_DAVD_ZILBER-1.jpg')"
+          :data-src="require('../assets/images/toronto-life/TL-01.jpg')"
           alt="Image from Toronto Life magazine designed by Stephanie Firka."
         />
         <div class="img-container">
           <img
-            :data-src="require('../assets/images/toronto-life/19_02_CHEFS_ON_THE_ROAD-1.jpg')"
+            :data-src="require('../assets/images/toronto-life/TL-02.jpg')"
             alt="Image from Toronto Life magazine designed by Stephanie Firka."
           />
           <img
-            :data-src="require('../assets/images/toronto-life/19_02_CHEFS_ON_THE_ROAD-2.jpg')"
+            :data-src="require('../assets/images/toronto-life/TL-03.jpg')"
             alt="Image from Toronto Life magazine designed by Stephanie Firka."
           />
         </div>
         <img
-          :data-src="require('../assets/images/toronto-life/19_06_COUCH_PEOPLE-1.jpg')"
+          :data-src="require('../assets/images/toronto-life/TL-04.jpg')"
           alt="Image from Toronto Life magazine designed by Stephanie Firka."
         />
         <img
-          :data-src="require('../assets/images/toronto-life/19_05_ALEK_MINASSIAN-1.jpg')"
+          :data-src="require('../assets/images/toronto-life/TL-05.jpg')"
           alt="Image from Toronto Life magazine designed by Stephanie Firka."
         />
         <img
-          :data-src="require('../assets/images/toronto-life/18_08_ANDRE_DE_GRASSE-1.jpg')"
+          :data-src="require('../assets/images/toronto-life/TL-06.jpg')"
           alt="Image from Toronto Life magazine designed by Stephanie Firka."
         />
       </div>
@@ -54,9 +46,9 @@
         <div class="line"></div>
         <nuxt-link to="/">Projects</nuxt-link>
       </nav>
-      <img v-lazy="require('../assets/images/pavilion-project.jpg')" class="next-project-img" />
+      <img v-lazy="require('../assets/images/top-hat.jpg')" class="next-project-img" />
 
-      <nuxt-link class="next-project-link" to="/pavilion-project">Pavilion Project</nuxt-link>
+      <nuxt-link class="next-project-link" to="/top-hat">Top Hat</nuxt-link>
 
       <footer class="footer">
         <nuxt-link to="/golden-girls">
@@ -88,7 +80,7 @@ export default {
 <style lang="scss" scoped>
 .project-credits {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   max-width: 669px;
   margin: 0 auto;
 }

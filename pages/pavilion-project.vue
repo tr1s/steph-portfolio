@@ -3,7 +3,7 @@
     <section class="inner-wrapper project">
       <h1 class="project-title">Pavilion Project</h1>
       <div class="project-credits">
-        <p>Creative Direction</p>
+        <p>Creative Director</p>
         <p>Whitman Emorson</p>
       </div>
       <div v-lazy-container="{ selector: 'img' }" class="content">
@@ -42,9 +42,9 @@
         <div class="line"></div>
         <nuxt-link to="/">Projects</nuxt-link>
       </nav>
-      <img v-lazy="require('../assets/images/next-block.jpg')" class="next-project-img" />
+      <img v-lazy="require('../assets/images/tmu.jpg')" class="next-project-img" />
 
-      <nuxt-link class="next-project-link" to="/block">Block</nuxt-link>
+      <nuxt-link class="next-project-link" to="/tmu">TMU</nuxt-link>
 
       <footer class="footer">
         <nuxt-link to="/golden-girls">
