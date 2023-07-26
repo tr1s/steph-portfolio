@@ -156,6 +156,7 @@ export default {
     @include respond-to('desktop-13') {
       right: 0rem;
       align-self: flex-start;
+      margin-top: 10rem;
     }
   }
   .img-container-2 {
