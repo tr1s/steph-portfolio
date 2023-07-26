@@ -54,9 +54,9 @@
         <div class="line"></div>
         <nuxt-link to="/">Projects</nuxt-link>
       </nav>
-      <img v-lazy="require('../assets/images/nightizm.jpg')" class="next-project-img" />
+      <img v-lazy="require('../assets/images/toronto-life.jpg')" class="next-project-img" />
 
-      <nuxt-link class="next-project-link" to="/nightizm">Nightizm</nuxt-link>
+      <nuxt-link class="next-project-link" to="/toronto-life">Toronto Life</nuxt-link>
 
       <footer class="footer">
         <nuxt-link to="/golden-girls">

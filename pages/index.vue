@@ -5,16 +5,16 @@
         <nuxt-link to="/toronto-life">Toronto Life</nuxt-link>
       </li>
       <li>
+        <nuxt-link to="/top-hat">Top Hat</nuxt-link>
+      </li>
+      <li>
         <nuxt-link to="/pavilion-project">Pavilion Project</nuxt-link>
       </li>
       <li>
-        <nuxt-link to="/block">Block</nuxt-link>
+        <nuxt-link to="/tmu">TMU</nuxt-link>
       </li>
       <li>
         <nuxt-link to="/canadian-business">Canadian Business</nuxt-link>
-      </li>
-      <li>
-        <nuxt-link to="/nightizm">Nightizm</nuxt-link>
       </li>
     </ul>
     <Footer />
@@ -65,6 +65,10 @@ export default {
     font-size: 3.8rem;
   }
 }
+ul li {
+  margin-top: -0.5rem;
+  margin-bottom: -0.5rem;
+}
 ul li a {
   text-decoration: none;
   font-family: $font-heading;
@@ -72,6 +76,6 @@ ul li a {
 }
 ul li a:hover,
 ul li a:focus {
-  color: #f04e44;
+  color: #0000f9;
 }
 </style>

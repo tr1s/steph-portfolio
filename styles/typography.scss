@@ -2,19 +2,17 @@
 ========================================================================== */
 
 @font-face {
-  font-family: 'RomanaBT-Roman';
-  font-style: normal;
+  font-family: 'VegawantyRegular-owEPx';
+  font-style: italic;
   font-weight: 400;
-  src: local('RomanaBT Roman'), local('RomanaBT-Roman'),
-    url('../assets/fonts/RomanaBT-Roman.ttf') format('ttf');
+  src: url('/VegawantyRegular-owEPx.woff2') format('woff2');
 }
 
 @font-face {
-  font-family: 'BureauGrotWide Light';
+  font-family: 'TestSöhneBreit-Kräftig';
   font-style: normal;
   font-weight: 600;
-  src: local('BureauGrotWide Light'), local('BureauGrotWide-Light'),
-    url('../assets/fonts/BureauGrotWide-Light.otf') format('otf');
+  src: url('/TestSöhneBreit-Kräftig.woff2') format('woff2');
 }
 
 html {
