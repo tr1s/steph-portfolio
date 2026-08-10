@@ -10,6 +10,22 @@ const nextConfig = {
     // the "@/" jsconfig alias is JS-only and does not resolve in Sass.
     loadPaths: ['./src'],
     additionalData: `@use "styles/abstracts" as *;`
+  },
+  async headers() {
+    return [
+      {
+        // public/sw.js exists only to unregister the old @nuxtjs/pwa Workbox
+        // worker. It must never be cached, or a stale copy could delay the
+        // teardown for visitors who still have the old worker installed.
+        source: '/sw.js',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'no-cache, no-store, must-revalidate'
+          }
+        ]
+      }
+    ];
   }
 };
 
