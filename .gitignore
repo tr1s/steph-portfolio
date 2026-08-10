@@ -92,3 +92,6 @@ sw.*
 
 # Vim swap files
 *.swp
+
+# Visual-parity screenshots and diffs — regenerated on demand.
+scripts/visual-parity/out/
