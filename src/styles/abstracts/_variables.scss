@@ -1,0 +1,19 @@
+/* Global variables
+========================================================================== */
+
+// Font families come from next/font/local (src/fonts/index.js). The generated
+// variable classes are applied to <html> in src/app/layout.js, so these resolve
+// everywhere. Fallbacks match the original declarations.
+$font-heading: var(--font-heading), serif;
+$font-body: var(--font-body), -apple-system, sans-serif;
+
+// colors
+$white: #fff;
+$white-soft: #f9f9f9;
+$black: rgba(0, 14, 27, 1);
+
+$red: #f04e44;
+$blue: #78a6ff;
+
+$color-main: #f04e44;
+$color-accent: #f04e44;

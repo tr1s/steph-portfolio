@@ -1,0 +1,9 @@
+/* Golden Girls - ported from the <style scoped> block of
+   pages/golden-girls.vue. The page is just the background image set by
+   `body.golden-girls` in global.scss; the audio player itself is hidden. */
+
+.page-golden-girls {
+  audio {
+    display: none;
+  }
+}

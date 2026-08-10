@@ -1,0 +1,84 @@
+/* Toronto Life - ported from the <style scoped> block of
+   pages/toronto-life.vue. `.project-credits` here deliberately overrides the
+   shared rule in global.scss; nesting under .page-toronto-life reproduces the
+   specificity bump Vue's scoped attribute used to give it. */
+
+.page-toronto-life {
+  .project-credits {
+    display: flex;
+    justify-content: center;
+    max-width: 669px;
+    margin: 0 auto;
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    img:nth-of-type(1) {
+      width: 100%;
+      max-width: 900px;
+      align-self: flex-end;
+      margin-bottom: 24rem;
+      @include respond-to('mobile-large') {
+        margin-bottom: 10rem;
+      }
+    }
+    .img-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-bottom: 3rem;
+      @include respond-to('mobile-large') {
+        margin-bottom: 10rem;
+      }
+      img:first-child {
+        width: 100%;
+        max-width: 410px;
+        align-self: flex-start;
+      }
+      img:last-child {
+        width: 100%;
+        max-width: 818px;
+        align-self: flex-start;
+        position: relative;
+        top: 17.5rem;
+        left: -10rem;
+        @include respond-to('desktop-13') {
+          position: initial;
+          top: 0;
+          left: 0;
+        }
+      }
+    }
+    img:nth-of-type(2) {
+      width: 100%;
+      max-width: 1089px;
+      align-self: flex-start;
+      margin-bottom: 25rem;
+      @include respond-to('mobile-large') {
+        margin-bottom: 0rem;
+      }
+    }
+    img:nth-of-type(3) {
+      width: 100%;
+      max-width: 818px;
+      align-self: flex-end;
+      margin-bottom: 10rem;
+      margin-right: 8rem;
+      @include respond-to('tablet-large') {
+        margin-right: 0;
+      }
+      @include respond-to('mobile-large') {
+        margin-top: 10rem;
+        margin-bottom: 10rem;
+      }
+    }
+    img:nth-of-type(4) {
+      width: 100%;
+      align-self: center;
+      max-width: 1105px;
+      margin-bottom: 0;
+    }
+  }
+}

@@ -1,0 +1,86 @@
+/* Me / About - ported from the <style scoped> block of pages/me.vue.
+   The root element keeps its `me` class as well as `page-me`, because
+   global.scss targets `.me .me .intro p` (body class, then this wrapper) to
+   turn the type white against the blue background. */
+
+.page-me.me {
+  width: 100%;
+  max-width: 988px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 5rem auto;
+  text-align: center;
+  .intro {
+    margin-bottom: 8rem;
+    @include respond-to('mobile-large') {
+      margin-bottom: 3rem;
+    }
+  }
+  .intro p {
+    font-size: 6.5rem;
+    font-family: serif;
+    font-weight: 500;
+    line-height: 7.1rem;
+    font-family: $font-heading;
+    letter-spacing: 0.1rem;
+    @include respond-to('tablet-large') {
+      width: 90%;
+      max-width: 700px;
+      margin: 0 auto;
+      font-size: 4rem;
+      line-height: 5.1rem;
+    }
+    @include respond-to('tablet') {
+      font-size: 4rem;
+      line-height: 5.1rem;
+    }
+    @include respond-to('mobile-large') {
+      font-size: 2.1rem;
+      line-height: 2.5rem;
+    }
+    @include respond-to('mobile') {
+      font-size: 1.9rem;
+      line-height: 2.4rem;
+    }
+    @include respond-to('mobile-small') {
+      font-size: 1.8rem;
+      line-height: 2.2rem;
+    }
+    span {
+      display: table;
+      margin: 0 auto;
+    }
+  }
+  .email {
+    font-size: 3.5rem;
+    font-family: $font-heading;
+    margin-bottom: 3rem;
+    @include respond-to('mobile-large') {
+      font-size: 1.7rem;
+    }
+  }
+  .developer {
+    p {
+      font-size: 1.1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.261rem;
+      line-height: 1.3rem;
+      text-transform: uppercase;
+      @include respond-to('mobile-large') {
+        font-size: 6px;
+        line-height: 0;
+      }
+    }
+    a {
+      font-family: $font-heading;
+      font-size: 3.5rem;
+      margin-bottom: 0;
+      @include respond-to('mobile-large') {
+        font-size: 1.7rem;
+        line-height: 3.1rem;
+      }
+    }
+  }
+}

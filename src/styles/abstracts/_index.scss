@@ -1,0 +1,8 @@
+/* Forwards every abstract so one `@use "styles/abstracts" as *` (injected via
+   sassOptions.additionalData in next.config.mjs) exposes all of them.
+   This is the replacement for Nuxt's @nuxtjs/style-resources module.
+========================================================================== */
+
+@forward 'variables';
+@forward 'mixins';
+@forward 'functions';
