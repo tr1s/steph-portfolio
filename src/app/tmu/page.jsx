@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import ProjectPage from '@/components/ProjectPage';
+import { sizesFor } from '@/lib/image-sizes';
 import nextImage from '@/images/canadian-business.jpg';
 import tmu01 from '@/images/tmu/TMU-01.jpg';
 import tmu02 from '@/images/tmu/TMU-02.jpg';
@@ -36,14 +37,33 @@ export default function Tmu() {
         variant: 'block'
       }}
     >
-      <Image className="image-1" src={tmu01} alt={alt} placeholder="blur" />
-      <Image className="image-2" src={tmu02} alt={alt} placeholder="blur" />
+      {/* sizes values mirror the max-width each image gets in page.scss */}
+      <Image
+        className="image-1"
+        src={tmu01}
+        alt={alt}
+        placeholder="blur"
+        sizes={sizesFor(730)}
+      />
+      <Image
+        className="image-2"
+        src={tmu02}
+        alt={alt}
+        placeholder="blur"
+        sizes={sizesFor(1240)}
+      />
       <div className="img-container">
-        <Image src={tmu03} alt={alt} placeholder="blur" />
-        <Image src={tmu04} alt={alt} placeholder="blur" />
-        <Image src={tmu05} alt={alt} placeholder="blur" />
+        <Image src={tmu03} alt={alt} placeholder="blur" sizes={sizesFor(308)} />
+        <Image src={tmu04} alt={alt} placeholder="blur" sizes={sizesFor(308)} />
+        <Image src={tmu05} alt={alt} placeholder="blur" sizes={sizesFor(308)} />
       </div>
-      <Image className="image-6" src={tmu06} alt={alt} placeholder="blur" />
+      <Image
+        className="image-6"
+        src={tmu06}
+        alt={alt}
+        placeholder="blur"
+        sizes={sizesFor(1200)}
+      />
     </ProjectPage>
   );
 }

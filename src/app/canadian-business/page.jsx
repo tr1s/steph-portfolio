@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import ProjectPage from '@/components/ProjectPage';
+import { sizesFor } from '@/lib/image-sizes';
 import nextImage from '@/images/toronto-life.jpg';
 import cb16 from '@/images/canadian-business/CB17_JAN2017_HI-16.jpg';
 import cb17 from '@/images/canadian-business/CB17_JAN2017_HI-17.jpg';
@@ -37,17 +38,30 @@ export default function CanadianBusiness() {
         variant: 'block'
       }}
     >
-      <Image src={cb16} alt={alt} placeholder="blur" />
-      <Image src={cb17} alt={alt} placeholder="blur" />
+      {/* sizes values mirror the max-width each image gets in page.scss */}
+      <Image src={cb16} alt={alt} placeholder="blur" sizes={sizesFor(1200)} />
+      <Image src={cb17} alt={alt} placeholder="blur" sizes={sizesFor(900)} />
       <div className="img-container">
-        <Image src={bestPackage} alt={alt} placeholder="blur" />
-        <Image src={bestPackage3} alt={alt} placeholder="blur" />
+        <Image
+          src={bestPackage}
+          alt={alt}
+          placeholder="blur"
+          sizes={sizesFor(986)}
+        />
+        <Image
+          src={bestPackage3}
+          alt={alt}
+          placeholder="blur"
+          sizes={sizesFor(416)}
+        />
       </div>
-      <Image src={ronWhite} alt={alt} placeholder="blur" />
+      <Image src={ronWhite} alt={alt} placeholder="blur" sizes={sizesFor(805)} />
       <div className="img-container-2">
-        <Image src={sum16} alt={alt} placeholder="blur" />
-        <Image src={sum17} alt={alt} placeholder="blur" />
-        <Image src={sum20} alt={alt} placeholder="blur" />
+        {/* these two go to max-width: 100% at mobile-large, which the
+            100vw branch of sizesFor already covers */}
+        <Image src={sum16} alt={alt} placeholder="blur" sizes={sizesFor(364)} />
+        <Image src={sum17} alt={alt} placeholder="blur" sizes={sizesFor(364)} />
+        <Image src={sum20} alt={alt} placeholder="blur" sizes={sizesFor(791)} />
       </div>
     </ProjectPage>
   );

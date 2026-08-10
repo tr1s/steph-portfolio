@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import ProjectPage from '@/components/ProjectPage';
+import { sizesFor } from '@/lib/image-sizes';
 import nextImage from '@/images/top-hat.jpg';
 import tl01 from '@/images/toronto-life/TL-01.jpg';
 import tl02 from '@/images/toronto-life/TL-02.jpg';
@@ -37,14 +38,15 @@ export default function TorontoLife() {
         variant: 'pavillion'
       }}
     >
-      <Image src={tl01} alt={alt} placeholder="blur" />
+      {/* sizes values mirror the max-width each image gets in page.scss */}
+      <Image src={tl01} alt={alt} placeholder="blur" sizes={sizesFor(900)} />
       <div className="img-container">
-        <Image src={tl02} alt={alt} placeholder="blur" />
-        <Image src={tl03} alt={alt} placeholder="blur" />
+        <Image src={tl02} alt={alt} placeholder="blur" sizes={sizesFor(410)} />
+        <Image src={tl03} alt={alt} placeholder="blur" sizes={sizesFor(818)} />
       </div>
-      <Image src={tl04} alt={alt} placeholder="blur" />
-      <Image src={tl05} alt={alt} placeholder="blur" />
-      <Image src={tl06} alt={alt} placeholder="blur" />
+      <Image src={tl04} alt={alt} placeholder="blur" sizes={sizesFor(1089)} />
+      <Image src={tl05} alt={alt} placeholder="blur" sizes={sizesFor(818)} />
+      <Image src={tl06} alt={alt} placeholder="blur" sizes={sizesFor(1105)} />
     </ProjectPage>
   );
 }
