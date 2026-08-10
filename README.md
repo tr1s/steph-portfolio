@@ -32,13 +32,13 @@ npm start
 
 ## Structure
 
-| Path | What |
-| --- | --- |
-| `src/app/` | One folder per route; each has `page.jsx` + its own `page.scss` |
+| Path              | What                                                                          |
+| ----------------- | ----------------------------------------------------------------------------- |
+| `src/app/`        | One folder per route; each has `page.jsx` + its own `page.scss`               |
 | `src/components/` | `Shell` (layout), `Header`, `Footer`, `NavLink`, `NextProject`, `ProjectPage` |
-| `src/styles/` | `normalize` / `typography` / `global` / `components`, plus `abstracts/` |
-| `src/images/` | Project imagery, imported statically so `next/image` can optimize it |
-| `src/fonts/` | Vegawanty + Söhne, loaded via `next/font/local` |
+| `src/styles/`     | `normalize` / `typography` / `global` / `components`, plus `abstracts/`       |
+| `src/images/`     | Project imagery, imported statically so `next/image` can optimize it          |
+| `src/fonts/`      | Vegawanty + Söhne, loaded via `next/font/local`                               |
 
 ### Styles
 

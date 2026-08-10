@@ -1,0 +1,30 @@
+/*
+ * Workspace editor settings.
+ * ------------------------------------------------------------------------------
+ * Wires ESLint and Prettier into the editor so problems surface inline while you
+ * type, instead of only when `npm run lint` is run by hand or CI rejects the PR.
+ *
+ * Division of labour: Prettier owns formatting (.prettierrc), ESLint owns
+ * correctness (eslint.config.mjs). On save, ESLint's auto-fixable problems are
+ * applied first, then Prettier formats the result. The two don't fight because
+ * eslint-config-next carries no stylistic rules.
+ *
+ * Requires the extensions listed in extensions.json.
+ */
+{
+  // Prettier formats on save, for every file type it understands.
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+
+  // Apply ESLint's auto-fixable problems on an explicit save (Cmd+S) only —
+  // "explicit" keeps autosave from rewriting code mid-thought.
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
+
+  // eslint.config.mjs is flat config. Auto-detected on ESLint 9, set here so the
+  // intent is obvious rather than implied.
+  "eslint.useFlatConfig": true,
+
+  "eslint.validate": ["javascript", "javascriptreact"]
+}

@@ -1,0 +1,11 @@
+.git/
+.next/
+node_modules/
+
+# Static assets and generated files — nothing here is hand-edited.
+public/
+package-lock.json
+
+# Vendored: normalize.css v8.0.1, kept byte-identical to upstream so it can be
+# diffed against a new release.
+src/styles/normalize.scss

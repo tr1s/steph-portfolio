@@ -1,7 +1,8 @@
 # Continuous integration.
 # ------------------------------------------------------------------------------
-# Runs on every pull request and on pushes to master. Two gates, in order:
-# ESLint, then a production build.
+# Runs on every pull request and on pushes to master. Three gates, in order:
+# Prettier, ESLint, then a production build. Formatting is checked first because
+# it is the fastest to run and the cheapest to fix.
 #
 # The lint gate is strict — `npm run lint` carries --max-warnings 0, so a
 # warning fails the run, not just an error. That's deliberate: ESLint's Next.js
@@ -42,6 +43,8 @@ jobs:
 
       # `npm ci` fails if package-lock.json and package.json have drifted apart.
       - run: npm ci
+
+      - run: npm run format:check
 
       - run: npm run lint
 

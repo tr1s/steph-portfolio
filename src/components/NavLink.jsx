@@ -10,9 +10,7 @@ const normalise = (path) => path.replace(/(.)\/$/, '$1');
 // global (unhashed) because global.scss targets it under .me and .golden-girls.
 export default function NavLink({ href, className, children }) {
   const isExactActive = normalise(usePathname()) === normalise(href);
-  const classes = [className, isExactActive && 'exact-active-link']
-    .filter(Boolean)
-    .join(' ');
+  const classes = [className, isExactActive && 'exact-active-link'].filter(Boolean).join(' ');
 
   return (
     <Link href={href} className={classes || undefined}>

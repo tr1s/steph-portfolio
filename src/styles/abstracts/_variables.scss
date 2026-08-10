@@ -5,7 +5,10 @@
 // variable classes are applied to <html> in src/app/layout.js, so these resolve
 // everywhere. Fallbacks match the original declarations.
 $font-heading: var(--font-heading), serif;
-$font-body: var(--font-body), -apple-system, sans-serif;
+$font-body:
+  var(--font-body),
+  -apple-system,
+  sans-serif;
 
 // colors
 $white: #fff;

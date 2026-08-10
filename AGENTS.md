@@ -21,13 +21,13 @@ Content below this line is ours. `next dev` only rewrites the block above it.
 import { sizesFor } from '@/lib/image-sizes';
 
 // max-width: 308px in the page's .scss
-<Image src={photo} alt={alt} placeholder="blur" sizes={sizesFor(308)} />
+<Image src={photo} alt={alt} placeholder="blur" sizes={sizesFor(308)} />;
 ```
 
 Pass the `max-width` that image gets in its page's stylesheet. If an image has
 no `max-width` and is genuinely full-bleed, use `sizes="100vw"`.
 
-**Why it matters here:** without `sizes`, next/image emits *no srcset at all*
+**Why it matters here:** without `sizes`, next/image emits _no srcset at all_
 and serves one oversized file to every device. Before this was fixed, a phone
 downloaded the same `w=1920`/`w=3840` images as a desktop — 4.71 MB across the
 five project pages at both 414px and 1440px. With `sizes` it is 1.30 MB on

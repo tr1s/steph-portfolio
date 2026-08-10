@@ -6,13 +6,7 @@ import NextProject from './NextProject';
 //
 // `pageClass` namespaces each page's own stylesheet - it stands in for Vue's
 // `<style scoped>`, which raised specificity the same way (class + attribute).
-export default function ProjectPage({
-  pageClass,
-  title,
-  credits,
-  children,
-  next
-}) {
+export default function ProjectPage({ pageClass, title, credits, children, next }) {
   return (
     <div className={pageClass}>
       <section className="inner-wrapper project">

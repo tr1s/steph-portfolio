@@ -11,8 +11,7 @@
 export const siteConfig = {
   name: 'Stephanie Firka',
   url: 'https://stephfirka.com',
-  description:
-    'Graphic Designer & Number One Golden Girls Fan, based in Toronto, Canada.',
+  description: 'Graphic Designer & Number One Golden Girls Fan, based in Toronto, Canada.',
   locale: 'en_CA',
 
   author: {
@@ -27,8 +26,7 @@ export const siteConfig = {
     // shows the real typography rather than a cropped project scan. Regenerate
     // it if the home page changes - see AGENTS.md.
     defaultImage: '/seo/og-default.jpg',
-    defaultImageAlt:
-      'Stephanie Firka - Graphic Designer based in Toronto, Canada.'
+    defaultImageAlt: 'Stephanie Firka - Graphic Designer based in Toronto, Canada.'
     // No `keywords`: the meta keywords tag has been ignored by every major
     // search engine for years. Deliberately omitted rather than forgotten.
   },
