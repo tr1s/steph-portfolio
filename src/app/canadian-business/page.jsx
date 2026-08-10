@@ -11,12 +11,12 @@ import sum16 from '@/images/canadian-business/CB07-08_SUM2016-HI-16.jpg';
 import sum17 from '@/images/canadian-business/CB07-08_SUM2016-HI-17.jpg';
 import sum20 from '@/images/canadian-business/CB07-08_SUM2016-HI-20.jpg';
 import './page.scss';
+import { pageMetadata } from '@/lib/page-metadata';
 
-export const metadata = {
-  title: 'Stephanie Firka - Canadian Business',
-  description:
-    'Graphic Designer & Number One Golden Girls Fan, based in Toronto, Canada.'
-};
+export const metadata = pageMetadata({
+  title: 'Canadian Business',
+  path: '/canadian-business/'
+});
 
 const alt = 'Image from Canadian Business magazine designed by Stephanie Firka.';
 
@@ -42,18 +42,8 @@ export default function CanadianBusiness() {
       <Image src={cb16} alt={alt} placeholder="blur" sizes={sizesFor(1200)} />
       <Image src={cb17} alt={alt} placeholder="blur" sizes={sizesFor(900)} />
       <div className="img-container">
-        <Image
-          src={bestPackage}
-          alt={alt}
-          placeholder="blur"
-          sizes={sizesFor(986)}
-        />
-        <Image
-          src={bestPackage3}
-          alt={alt}
-          placeholder="blur"
-          sizes={sizesFor(416)}
-        />
+        <Image src={bestPackage} alt={alt} placeholder="blur" sizes={sizesFor(986)} />
+        <Image src={bestPackage3} alt={alt} placeholder="blur" sizes={sizesFor(416)} />
       </div>
       <Image src={ronWhite} alt={alt} placeholder="blur" sizes={sizesFor(805)} />
       <div className="img-container-2">

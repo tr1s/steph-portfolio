@@ -9,12 +9,12 @@ import tl04 from '@/images/toronto-life/TL-04.jpg';
 import tl05 from '@/images/toronto-life/TL-05.jpg';
 import tl06 from '@/images/toronto-life/TL-06.jpg';
 import './page.scss';
+import { pageMetadata } from '@/lib/page-metadata';
 
-export const metadata = {
-  title: 'Stephanie Firka - Toronto Life',
-  description:
-    'Graphic Designer & Number One Golden Girls Fan, based in Toronto, Canada.'
-};
+export const metadata = pageMetadata({
+  title: 'Toronto Life',
+  path: '/toronto-life/'
+});
 
 const alt = 'Image from Toronto Life magazine designed by Stephanie Firka.';
 

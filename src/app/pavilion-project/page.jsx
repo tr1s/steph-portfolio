@@ -8,12 +8,12 @@ import postcards from '@/images/pavilion-project/Postcards_PAV_170131.jpg';
 import credentials from '@/images/pavilion-project/Credentals_PAV_170131.jpg';
 import bags from '@/images/pavilion-project/Bags_PAV_170131.jpg';
 import './page.scss';
+import { pageMetadata } from '@/lib/page-metadata';
 
-export const metadata = {
-  title: 'Stephanie Firka - Pavilion Project',
-  description:
-    'Graphic Designer & Number One Golden Girls Fan, based in Toronto, Canada.'
-};
+export const metadata = pageMetadata({
+  title: 'Pavilion Project',
+  path: '/pavilion-project/'
+});
 
 const alt = 'Image from Pavilion Project branding designed by Stephanie Firka.';
 
@@ -37,27 +37,12 @@ export default function PavilionProject() {
     >
       {/* sizes values mirror the max-width each image gets in page.scss */}
       <div className="img-container">
-        <Image
-          src={memberCard}
-          alt={alt}
-          placeholder="blur"
-          sizes={sizesFor(440)}
-        />
+        <Image src={memberCard} alt={alt} placeholder="blur" sizes={sizesFor(440)} />
         <Image src={tote} alt={alt} placeholder="blur" sizes={sizesFor(635)} />
       </div>
-      <Image
-        src={postcards}
-        alt={alt}
-        placeholder="blur"
-        sizes={sizesFor(1260)}
-      />
+      <Image src={postcards} alt={alt} placeholder="blur" sizes={sizesFor(1260)} />
       <div className="img-container-2">
-        <Image
-          src={credentials}
-          alt={alt}
-          placeholder="blur"
-          sizes={sizesFor(635)}
-        />
+        <Image src={credentials} alt={alt} placeholder="blur" sizes={sizesFor(635)} />
         <Image src={bags} alt={alt} placeholder="blur" sizes={sizesFor(1100)} />
       </div>
     </ProjectPage>

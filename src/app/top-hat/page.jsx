@@ -11,12 +11,12 @@ import th06 from '@/images/top-hat/TH-06.jpg';
 import th07 from '@/images/top-hat/TH-07.jpg';
 import th08 from '@/images/top-hat/TH-08.jpg';
 import './page.scss';
+import { pageMetadata } from '@/lib/page-metadata';
 
-export const metadata = {
-  title: 'Stephanie Firka - Top Hat',
-  description:
-    'Graphic Designer & Number One Golden Girls Fan, based in Toronto, Canada.'
-};
+export const metadata = pageMetadata({
+  title: 'Top Hat',
+  path: '/top-hat/'
+});
 
 const alt = 'Image from a Top Hat report designed by Stephanie Firka.';
 
@@ -43,27 +43,9 @@ export default function TopHat() {
         <Image src={th01} alt={alt} placeholder="blur" sizes={sizesFor(408)} />
         <Image src={th02} alt={alt} placeholder="blur" sizes={sizesFor(565)} />
       </div>
-      <Image
-        className="image-3"
-        src={th03}
-        alt={alt}
-        placeholder="blur"
-        sizes={sizesFor(355)}
-      />
-      <Image
-        className="image-4"
-        src={th04}
-        alt={alt}
-        placeholder="blur"
-        sizes={sizesFor(1000)}
-      />
-      <Image
-        className="image-5"
-        src={th05}
-        alt={alt}
-        placeholder="blur"
-        sizes={sizesFor(956)}
-      />
+      <Image className="image-3" src={th03} alt={alt} placeholder="blur" sizes={sizesFor(355)} />
+      <Image className="image-4" src={th04} alt={alt} placeholder="blur" sizes={sizesFor(1000)} />
+      <Image className="image-5" src={th05} alt={alt} placeholder="blur" sizes={sizesFor(956)} />
       <div className="img-container-2">
         <Image src={th06} alt={alt} placeholder="blur" sizes={sizesFor(414)} />
         <Image src={th07} alt={alt} placeholder="blur" sizes={sizesFor(414)} />

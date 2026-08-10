@@ -1,10 +1,10 @@
 import './page.scss';
+import { pageMetadata } from '@/lib/page-metadata';
 
-export const metadata = {
-  title: 'Stephanie Firka - Me',
-  description:
-    'Graphic Designer & Number One Golden Girls Fan, based in Toronto, Canada.'
-};
+export const metadata = pageMetadata({
+  title: 'Me',
+  path: '/me/'
+});
 
 export default function Me() {
   return (
@@ -15,8 +15,8 @@ export default function Me() {
         </p>
         <p>Based in Toronto, Canada.</p>
         <p>
-          Stay in touch if you have a project, want to collaborate, or simply
-          want to exchange perspectives.
+          Stay in touch if you have a project, want to collaborate, or simply want to exchange
+          perspectives.
         </p>
       </div>
       <a className="email" href="mailto:stephfirka@gmail.com">

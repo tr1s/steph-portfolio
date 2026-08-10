@@ -1,11 +1,8 @@
 import NavLink from '@/components/NavLink';
 import './page.scss';
+import { pageMetadata } from '@/lib/page-metadata';
 
-export const metadata = {
-  title: 'Stephanie Firka',
-  description:
-    'Graphic Designer & Number One Golden Girls Fan, based in Toronto, Canada.'
-};
+export const metadata = pageMetadata({ path: '/' });
 
 // Note: pages/index.vue also rendered a bare <Footer /> tag, but the component
 // was never registered (Nuxt 2.12 predates auto-imported components and
