@@ -19,7 +19,12 @@ export default function NextProject({ href, label, image, variant }) {
       </nav>
       {/* The original <img> had no alt at all; empty alt is the correct
           treatment for a decorative image sitting behind a text link. */}
-      <Image src={image} className="next-project-img" alt="" />
+      <Image
+        src={image}
+        className="next-project-img"
+        alt=""
+        placeholder="blur"
+      />
 
       <NavLink href={href} className="next-project-link">
         {label}
