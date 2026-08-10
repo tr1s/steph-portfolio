@@ -12,12 +12,12 @@ import th08 from '@/images/top-hat/TH-08.jpg';
 import './page.scss';
 
 export const metadata = {
-  title: 'Stephanie Firka - Block',
+  title: 'Stephanie Firka - Top Hat',
   description:
     'Graphic Designer & Number One Golden Girls Fan, based in Toronto, Canada.'
 };
 
-const alt = 'Image from Block magazine designed by Stephanie Firka.';
+const alt = 'Image from a Top Hat report designed by Stephanie Firka.';
 
 export default function TopHat() {
   return (

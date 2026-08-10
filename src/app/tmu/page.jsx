@@ -9,16 +9,14 @@ import tmu05 from '@/images/tmu/TMU-05.jpg';
 import tmu06 from '@/images/tmu/TMU-06.jpg';
 import './page.scss';
 
-// Title and alt text say "Nightizm" rather than "TMU" - carried over verbatim
-// from pages/tmu.vue, where the project appears to have been renamed without
-// the copy being updated. Flagged in the handoff rather than silently changed.
 export const metadata = {
-  title: 'Stephanie Firka - Nightizm',
+  title: 'Stephanie Firka - TMU',
   description:
     'Graphic Designer & Number One Golden Girls Fan, based in Toronto, Canada.'
 };
 
-const alt = 'Image from Nightizm branding designed by Stephanie Firka.';
+const alt =
+  'Image from the Toronto Metropolitan University Future Student Guide designed by Stephanie Firka.';
 
 export default function Tmu() {
   return (
