@@ -1,0 +1,48 @@
+# Continuous integration.
+# ------------------------------------------------------------------------------
+# Runs on every pull request and on pushes to master. Two gates, in order:
+# ESLint, then a production build.
+#
+# The lint gate is strict — `npm run lint` carries --max-warnings 0, so a
+# warning fails the run, not just an error. That's deliberate: ESLint's Next.js
+# and jsx-a11y rules report as warnings, and a warning that can never fail
+# anything gets ignored forever.
+#
+# This workflow is the only automated gate on the codebase. Vercel deploys do
+# NOT run ESLint — Next 16 dropped build-time linting along with `next lint`.
+#
+# No secrets or env vars are wired up on purpose: the build is verified to pass
+# with none present. getBaseUrl() in src/lib/site.config.js falls back to the
+# hardcoded production URL, so metadata still resolves.
+
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [master]
+
+# Pushing again to the same branch cancels the previous run instead of queueing.
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  verify:
+    name: Lint & build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          # Mirrors .nvmrc and the engines.node pin in package.json.
+          node-version: 24
+          cache: npm
+
+      # `npm ci` fails if package-lock.json and package.json have drifted apart.
+      - run: npm ci
+
+      - run: npm run lint
+
+      - run: npm run build
