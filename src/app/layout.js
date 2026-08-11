@@ -64,6 +64,11 @@ export const metadata = {
     images: [siteConfig.seo.defaultImage]
   },
 
+  // No `icons` key: favicon.ico, icon.svg and apple-icon.png sit alongside this
+  // file, and Next's app/ file convention emits the <link> tags for them with
+  // the right type and sizes attributes. Declaring them here as well would
+  // duplicate every tag.
+
   robots: {
     index: true,
     follow: true,
@@ -74,9 +79,7 @@ export const metadata = {
       'max-snippet': -1,
       'max-video-preview': -1
     }
-  },
-
-  icons: { icon: '/rose.jpg' }
+  }
 };
 
 export const viewport = {
