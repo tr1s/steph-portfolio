@@ -87,6 +87,25 @@ and `transform`: `.wrapper` is a flex column with `justify-content:
 space-between`, so anything affecting the list's height drags the footer with
 it. Hide with `visibility`, never `display`.
 
+## Animation: rise with `translate`, not Motion's `y`
+
+Motion's `y` (and `x`, `scale`, …) are written into the element's `transform`,
+which **replaces** whatever transform the stylesheet set. `canadian-business`
+centres one absolutely-positioned spread with `transform: translateX(-50%)` at
+`desktop-15`; animating `y` wiped that centring and pushed the page 71px wider
+than production. The parity harness caught it as a SIZE MISMATCH.
+
+Animate the standalone `translate` property instead — it composes with
+`transform` rather than overwriting it, so the stylesheets stay free to use
+transforms for layout:
+
+```js
+animate(el, { opacity: [0, 1], translate: ['0px 32px', '0px 0px'] }, SPRING);
+```
+
+Timing for every reveal lives in `src/lib/reveal.js`. `GROUP_STAGGER` is the one
+knob worth reaching for; change it there, not in a component.
+
 `motion-plus-dom` is depended on directly rather than the `motion-plus` wrapper.
 Both are published by Motion; the wrapper is only distributed through the
 Motion+ token registry, and `npm i`-ing that URL writes the licence token into

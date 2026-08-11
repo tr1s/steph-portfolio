@@ -164,6 +164,23 @@ nav .line::before {
 /* Project
 ================================================ */
 
+/* Reveal start states. components/ProjectReveal.jsx animates these in - the
+   title and credits on mount, each spread as it scrolls into view - and Motion
+   writes an inline opacity that outranks this rule.
+
+   opacity rather than visibility, because a spread is revealed *by* animating
+   opacity and a hidden element cannot be faded in. Neither affects layout, and
+   layout is the thing to protect: .project-title below is sticky with a
+   negative z-index and the spreads scroll over it.
+
+   The <noscript> block in ProjectReveal repeats this selector list to undo it
+   when JS never runs. Change one and change the other. */
+[data-project-reveal] .project-title,
+[data-project-reveal] .project-credits,
+[data-project-reveal] .content img {
+  opacity: 0;
+}
+
 .project-title {
   color: #e9e9e9;
   font-size: 15rem;

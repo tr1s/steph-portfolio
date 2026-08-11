@@ -28,3 +28,16 @@ export const SPRING = { type: 'spring', visualDuration: 0.9, bounce: 0.2 };
 /* Reduced motion keeps a fade so the page still resolves rather than snapping,
  * but drops every trace of movement. */
 export const REDUCED_FADE = { duration: 0.2 };
+
+/* The project pages reveal their spreads on scroll instead of on mount, so
+ * these two belong to components/ProjectReveal.jsx alone.
+ *
+ * A spread is a far bigger object than a line of type, and travel reads in
+ * proportion to the thing moving, so it rises further than TRAVEL does.
+ *
+ * SCROLL_AMOUNT is how much of an image has to be in view before it starts.
+ * Motion's default is "some", which fires on the first pixel - the animation
+ * would then play out below the fold and be over by the time it is worth
+ * looking at. A fifth means it begins once the image is genuinely arriving. */
+export const SCROLL_TRAVEL = 32; // px each image rises through
+export const SCROLL_AMOUNT = 0.2; // fraction of the image inside the viewport
