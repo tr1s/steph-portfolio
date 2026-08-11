@@ -75,6 +75,17 @@ async function settle(page) {
       timeout: 20000
     })
     .catch(() => {});
+  /* The homepage titles animate in on a stagger that finishes around 2.3s.
+   * Without this the screenshot lands mid-reveal and every run reports a
+   * difference that isn't real. Motion compiles its springs to a linear()
+   * easing and hands them to WAAPI, so getAnimations() sees them. */
+  await page
+    .waitForFunction(
+      () =>
+        document.getAnimations().every((a) => a.playState === 'finished' || a.playState === 'idle'),
+      { timeout: 15000 }
+    )
+    .catch(() => {});
   await page.waitForTimeout(700);
 }
 
