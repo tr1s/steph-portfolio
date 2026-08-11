@@ -70,6 +70,28 @@ mobile and 2.22 MB on desktop.
 Also give every content image `placeholder="blur"`, which works because images
 are imported statically from `src/images/`.
 
+## Animation: splitText must not break the type
+
+The homepage title reveal (`src/components/ProjectList.jsx`) uses Motion+'s
+`splitText`. **Always pass `preserveHyphens: true`.**
+
+`splitText` gives every fragment it creates `display: inline-block`, which ends
+the text run — so kerning pairs and ligatures are lost across the split. Without
+the flag it builds `.split-char` spans _even when you only animate `words`_, and
+at 1440px that widened "Toronto Life" by 31px (the `To` kern plus a broken `fi`
+ligature) and "Top Hat" by 22px. `preserveHyphens: true` makes it set each
+word's `innerHTML` in one piece instead, and parity returns to 0px.
+
+Animate `words`, never `chars`, for the same reason. And animate only `opacity`
+and `transform`: `.wrapper` is a flex column with `justify-content:
+space-between`, so anything affecting the list's height drags the footer with
+it. Hide with `visibility`, never `display`.
+
+`motion-plus-dom` is depended on directly rather than the `motion-plus` wrapper.
+Both are published by Motion; the wrapper is only distributed through the
+Motion+ token registry, and `npm i`-ing that URL writes the licence token into
+`package.json` and the lockfile — which this repo, being public, would publish.
+
 ## Verifying visual changes
 
 This site was ported from Nuxt 2 to be pixel-identical to production. When

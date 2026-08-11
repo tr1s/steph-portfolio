@@ -7,10 +7,18 @@
  *
  * The project list. Sizes step down through four breakpoints, including a
  * one-off 549px query that predates the respond-to() scale.
+ *
+ * `visibility: hidden` below is the start state of the staggered reveal in
+ * components/ProjectList.jsx, which flips it inline once the fonts have
+ * settled. It hides rather than collapses, so the list keeps its box and the
+ * footer never moves. See that file's header for the rest.
  */
 
 .page-home {
   .projects {
+    // Revealed by ProjectList once splitText has run. The <noscript> block in
+    // that component overrides this so a JS-less visitor still sees the titles.
+    visibility: hidden;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
