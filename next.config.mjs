@@ -1,3 +1,12 @@
+/*
+ * Next.js build and runtime configuration.
+ * ------------------------------------------------------------------------------
+ * Owns three things the rest of the app depends on: the trailing-slash URL
+ * shape inherited from the Nuxt site, the Sass globals that replace
+ * @nuxtjs/style-resources, and the no-cache header that lets public/sw.js
+ * retire the old service worker.
+ */
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   // The old Nuxt site served every route with a trailing slash (Netlify 301'd

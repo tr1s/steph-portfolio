@@ -1,3 +1,14 @@
+/*
+ * Canadian Business - project page.
+ * ------------------------------------------------------------------------------
+ * Editorial spreads for Canadian Business magazine. Layout comes from
+ * ProjectPage; the per-image positioning is in page.scss, and each sizesFor()
+ * value below is the max-width that image gets there.
+ *
+ * The longest page on the site, and the one whose stylesheet leans hardest on
+ * nth-of-type - check page.scss before reordering anything here.
+ */
+
 import Image from 'next/image';
 import ProjectPage from '@/components/ProjectPage';
 import { sizesFor } from '@/lib/image-sizes';

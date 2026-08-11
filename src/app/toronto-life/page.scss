@@ -1,7 +1,14 @@
-/* Toronto Life - ported from the <style scoped> block of
-   pages/toronto-life.vue. `.project-credits` here deliberately overrides the
-   shared rule in global.scss; nesting under .page-toronto-life reproduces the
-   specificity bump Vue's scoped attribute used to give it. */
+/*
+ * Toronto Life - page styles.
+ * ------------------------------------------------------------------------------
+ * Ported from the <style scoped> block of pages/toronto-life.vue.
+ * Namespaced under the page's own class, which stands in for Vue's scoping
+ * and reproduces the specificity it gave these rules over global.scss.
+ *
+ * `.project-credits` here deliberately overrides the shared rule in global.scss;
+ * nesting under the page class reproduces the specificity bump Vue's scoped
+ * attribute used to give it.
+ */
 
 .page-toronto-life {
   .project-credits {

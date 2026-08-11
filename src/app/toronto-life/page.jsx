@@ -1,3 +1,14 @@
+/*
+ * Toronto Life - project page.
+ * ------------------------------------------------------------------------------
+ * Editorial spreads for Toronto Life magazine. Layout comes from ProjectPage;
+ * the per-image positioning is in page.scss, and each sizesFor() value below is
+ * the max-width that image gets there.
+ *
+ * This page nests its credits in an extra <div> that the stylesheet centres, so
+ * the wrapper has to stay.
+ */
+
 import Image from 'next/image';
 import ProjectPage from '@/components/ProjectPage';
 import { sizesFor } from '@/lib/image-sizes';

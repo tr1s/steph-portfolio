@@ -12,6 +12,40 @@ This block is written and re-added by `next dev` — verify at `node_modules/nex
 
 Content below this line is ours. `next dev` only rewrites the block above it.
 
+## File header comments
+
+Every file opens with a header block — components, stylesheets, config, scripts.
+Title line first, then a divider, then what the file owns and anything worth
+knowing before editing it.
+
+```jsx
+/*
+ * Shared shell for the five project pages.
+ * ------------------------------------------------------------------------------
+ * Title, credits, the image column, then the next-project block. Reproduces the
+ * markup of the old .vue pages exactly.
+ *
+ * `pageClass` namespaces each page's own stylesheet. It stands in for Vue's
+ * `<style scoped>`, which raised specificity the same way.
+ */
+```
+
+- **Above the divider** — what this file _is_, in one short phrase.
+- **Below the divider** — what it owns, plus the gotchas a future editor needs.
+  Prefer the non-obvious: why a component is a client component, which selector
+  in `global.scss` reaches into this markup, what breaks if a value changes.
+- A component and its `page.scss` share the title line, but each body describes
+  its own concern — the stylesheet explains styling decisions, not the API.
+- Keep headers current. If a file's job changes, update its header in the same
+  edit.
+- Wrap at 80 columns. The divider is 78 dashes; copy it from a neighbouring file.
+- Don't restate the filename or narrate the code. If the header would only say
+  "the Header component", it isn't earning its place.
+- Files with a `'use client'` directive put the header **above** it. A leading
+  comment does not break the directive prologue — verified in the built output.
+
+Convention adopted from the DoReal codebase.
+
 ## Always give `next/image` a `sizes` prop
 
 **Every `<Image>` added to this project must have a `sizes` prop**, built with

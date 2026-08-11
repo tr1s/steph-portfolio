@@ -1,5 +1,13 @@
-/* Media Queries
-========================================================================== */
+/*
+ * Mixins.
+ * ------------------------------------------------------------------------------
+ * respond-to() is the breakpoint mixin the entire site is written against. Its
+ * named widths - mobile-small 320 through desktop-16 1792 - are also the widths
+ * scripts/visual-parity/compare.mjs checks, because regressions surface at the
+ * boundaries. Adding a breakpoint here means adding it there.
+ *
+ * Note these are max-width queries: this site was built desktop-first.
+ */
 
 @mixin respond-to($breakpoint) {
   @if $breakpoint== 'mobile-small' {

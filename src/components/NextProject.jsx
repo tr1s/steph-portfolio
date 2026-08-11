@@ -1,13 +1,22 @@
+/*
+ * Full-viewport "next project" block.
+ * ------------------------------------------------------------------------------
+ * Closes every project page: its own nav, a dimmed preview image, the big link
+ * onward, and a second Golden Girls footer. This markup was duplicated verbatim
+ * in all five .vue project pages.
+ *
+ * `variant` carries the second class the original markup had ("block" on four
+ * pages, "pavillion" on toronto-life). Nothing in the stylesheets targets
+ * either - they are dead classes - but they are kept so the DOM matches the old
+ * site exactly.
+ *
+ * Styled by the `.next-project` rules in styles/global.scss.
+ */
+
 import Image from 'next/image';
 import NavLink from './NavLink';
 import { sizesFor } from '@/lib/image-sizes';
 
-// The full-viewport "next project" block that closed every project page. It was
-// duplicated verbatim in all five .vue project pages.
-//
-// `variant` carries the second class the markup had ("block" on four pages,
-// "pavillion" on toronto-life). Nothing in the stylesheets targets either one -
-// they're dead classes - but they're kept so the DOM matches the old site.
 export default function NextProject({ href, label, image, variant }) {
   return (
     <div className={`next-project ${variant}`}>

@@ -1,6 +1,13 @@
-/* Home - ported from the <style scoped> block of pages/index.vue.
-   Namespaced under .page-home so it can't collide with the other pages'
-   styles, the way Vue's scoping used to. */
+/*
+ * Home - page styles.
+ * ------------------------------------------------------------------------------
+ * Ported from the <style scoped> block of pages/index.vue.
+ * Namespaced under the page's own class, which stands in for Vue's scoping
+ * and reproduces the specificity it gave these rules over global.scss.
+ *
+ * The project list. Sizes step down through four breakpoints, including a
+ * one-off 549px query that predates the respond-to() scale.
+ */
 
 .page-home {
   .projects {

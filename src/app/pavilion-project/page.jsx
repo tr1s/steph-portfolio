@@ -1,3 +1,11 @@
+/*
+ * Pavilion Project - project page.
+ * ------------------------------------------------------------------------------
+ * Branding collateral for the Pavilion Project. Layout comes from ProjectPage;
+ * the per-image positioning is in page.scss, and each sizesFor() value below is
+ * the max-width that image gets there.
+ */
+
 import Image from 'next/image';
 import ProjectPage from '@/components/ProjectPage';
 import { sizesFor } from '@/lib/image-sizes';

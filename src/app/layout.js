@@ -1,3 +1,15 @@
+/*
+ * Root layout.
+ * ------------------------------------------------------------------------------
+ * Owns <html>, the global stylesheet order, the font variable classes, and the
+ * site-wide metadata defaults. <body> and everything inside it belongs to Shell,
+ * which has to be a client component - see the header there for why.
+ *
+ * Metadata here is the fallback for every route. Each page overrides its own
+ * title, canonical and og:url through pageMetadata() in lib/page-metadata.js;
+ * anything a page does not set is inherited from this object.
+ */
+
 import { heading, body } from '@/fonts';
 import Shell from '@/components/Shell';
 import { siteConfig, getBaseUrl } from '@/lib/site.config';

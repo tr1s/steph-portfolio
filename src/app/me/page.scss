@@ -1,7 +1,14 @@
-/* Me / About - ported from the <style scoped> block of pages/me.vue.
-   The root element keeps its `me` class as well as `page-me`, because
-   global.scss targets `.me .me .intro p` (body class, then this wrapper) to
-   turn the type white against the blue background. */
+/*
+ * Me / About - page styles.
+ * ------------------------------------------------------------------------------
+ * Ported from the <style scoped> block of pages/me.vue.
+ * Namespaced under the page's own class, which stands in for Vue's scoping
+ * and reproduces the specificity it gave these rules over global.scss.
+ *
+ * The root element carries both `page-me` and `me`, so the selectors here are
+ * written `.page-me.me` to match it. Colour comes from `body.me` in
+ * global.scss, not from here.
+ */
 
 .page-me.me {
   width: 100%;

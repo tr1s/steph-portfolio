@@ -1,16 +1,24 @@
+/*
+ * Web fonts.
+ * ------------------------------------------------------------------------------
+ * Replaces the @font-face blocks that used to live in styles/typography.scss.
+ * next/font/local fingerprints each file and emits a preload link; the CSS
+ * variables it exposes are applied to <html> in app/layout.js and read by
+ * $font-heading / $font-body in styles/abstracts/_variables.scss.
+ *
+ * The weight/style descriptors mirror the original @font-face declarations
+ * exactly (Vegawanty italic/400, Söhne normal/600) so font matching and any
+ * synthetic obliquing behave as they did on the Nuxt site.
+ *
+ * adjustFontFallback is off on purpose. Left on, next/font appends a
+ * metric-adjusted local fallback ("heading Fallback") to the family, ahead of
+ * the serif / -apple-system fallbacks these fonts were designed against.
+ * Vegawanty has no comma, period or @ glyph, so production renders those
+ * characters in plain `serif`; with the injected fallback they render in
+ * size-adjusted Times and land a pixel off. Caught by a screenshot diff of /me.
+ */
+
 import localFont from 'next/font/local';
-
-// Descriptors mirror the original @font-face blocks in styles/typography.scss
-// exactly (Vegawanty was declared italic/400, Söhne normal/600) so font
-// matching and any synthetic obliquing behave the same as the Nuxt site.
-
-// adjustFontFallback is off on purpose. Left on, next/font appends a
-// metric-adjusted local fallback ("heading Fallback") to the family, ahead of
-// the serif / -apple-system fallbacks these fonts were designed against.
-// Vegawanty has no comma, period or @ glyph, so on the live site those
-// characters render in plain `serif`; with the injected fallback they render
-// in size-adjusted Times instead and land a pixel off. Verified via a
-// screenshot diff of /me against production.
 
 export const heading = localFont({
   src: './vegawanty-regular.woff2',

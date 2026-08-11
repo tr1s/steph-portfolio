@@ -1,4 +1,13 @@
-/* Top Hat - ported from the <style scoped> block of pages/top-hat.vue. */
+/*
+ * Top Hat - page styles.
+ * ------------------------------------------------------------------------------
+ * Ported from the <style scoped> block of pages/top-hat.vue.
+ * Namespaced under the page's own class, which stands in for Vue's scoping
+ * and reproduces the specificity it gave these rules over global.scss.
+ *
+ * Each `max-width` below is also the number passed to sizesFor() in page.jsx;
+ * change one and change the other.
+ */
 
 .page-top-hat {
   .content {

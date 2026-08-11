@@ -1,3 +1,11 @@
+/*
+ * Me - the about page.
+ * ------------------------------------------------------------------------------
+ * Intro copy, contact email, and the credit link. The root element keeps its
+ * `me` class alongside `page-me`, because `body.me .me` in global.scss is what
+ * turns the type white against the blue background.
+ */
+
 import './page.scss';
 import { pageMetadata } from '@/lib/page-metadata';
 

@@ -1,5 +1,10 @@
-/* Global functions
-========================================================================== */
+/*
+ * Colour helpers.
+ * ------------------------------------------------------------------------------
+ * tint() and shade() from the original Nuxt project. Currently unused by any
+ * stylesheet, but kept because they are part of the shared abstracts API that
+ * additionalData exposes everywhere.
+ */
 
 // Color tinting & shading
 // https://css-tricks.com/snippets/sass/tint-shade-functions/

@@ -1,5 +1,10 @@
-/* Global variables
-========================================================================== */
+/*
+ * Design tokens.
+ * ------------------------------------------------------------------------------
+ * Fonts and colours shared across every stylesheet. Injected into every .scss
+ * file by sassOptions.additionalData in next.config.mjs - never import this
+ * directly.
+ */
 
 // Font families come from next/font/local (src/fonts/index.js). The generated
 // variable classes are applied to <html> in src/app/layout.js, so these resolve

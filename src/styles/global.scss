@@ -1,5 +1,14 @@
-/* Global styles
-========================================================================== */
+/*
+ * Global styles.
+ * ------------------------------------------------------------------------------
+ * Element resets, shared page furniture (.inner-wrapper, .project-title,
+ * .project-credits, .next-project) and the three body-class themes that paint
+ * each route: .home, .me, .golden-girls. Shell puts those classes on <body>.
+ *
+ * These selectors are global on purpose. Page stylesheets namespace themselves
+ * under a .page-* class and override from there, which is what Vue's
+ * <style scoped> used to do by raising specificity.
+ */
 
 @use 'sass:color';
 

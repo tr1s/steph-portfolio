@@ -1,6 +1,15 @@
-/* Canadian Business - ported from the <style scoped> block of
-   pages/canadian-business.vue. `.project-title` here deliberately overrides
-   the shared rule in global.scss. */
+/*
+ * Canadian Business - page styles.
+ * ------------------------------------------------------------------------------
+ * Ported from the <style scoped> block of pages/canadian-business.vue.
+ * Namespaced under the page's own class, which stands in for Vue's scoping
+ * and reproduces the specificity it gave these rules over global.scss.
+ *
+ * Leans on `img:nth-of-type()` as a DESCENDANT selector, so those rules also
+ * match images inside .img-container / .img-container-2 and are then overridden
+ * by the :first-child / :last-child rules below. Reordering the JSX will move
+ * images between rules - re-run the parity script after any change here.
+ */
 
 .page-canadian-business {
   .project-title {

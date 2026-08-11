@@ -1,17 +1,19 @@
-/* Component styles
-   ==========================================================================
-   Ported from the <style scoped> blocks of components/Header.vue and
-   components/Footer.vue.
-
-   These stay global rather than becoming CSS Modules because global.scss
-   reaches into this markup by name (`.me nav a`, `.golden-girls footer a`,
-   `.home nav .line::before`, `.exact-active-link`, ...). Hashed class names
-   would silently break every one of those selectors.
-
-   Instead each block is anchored to its element so it can't leak into the
-   other <nav>/<footer> pairs rendered inside .next-project, which Vue's
-   scoping used to prevent.
-========================================================================== */
+/*
+ * Component styles.
+ * ------------------------------------------------------------------------------
+ * Ported from the <style scoped> blocks of components/Header.vue and
+ * components/Footer.vue, plus the unscoped .wrapper rule from
+ * layouts/default.vue.
+ *
+ * These stay global rather than becoming CSS Modules because global.scss
+ * reaches into this markup by name (`.me nav a`, `.golden-girls footer a`,
+ * `.home nav .line::before`, `.exact-active-link`). Hashed class names would
+ * silently break every one of those selectors.
+ *
+ * Instead each block is anchored to its element so it cannot leak into the
+ * other <nav>/<footer> pair that NextProject renders - which is what Vue's
+ * scoping used to prevent.
+ */
 
 /* Layout wrapper
 ================================================
