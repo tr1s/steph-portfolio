@@ -3,9 +3,10 @@
  * ------------------------------------------------------------------------------
  * Each title is split into words by Motion+'s splitText, then animated up on a
  * spring. Two rhythms are nested: words cascade inside a title every
- * PART_STAGGER, and each whole title is pushed back by GROUP_STAGGER via
- * stagger()'s `startDelay`. Both live in lib/reveal.js, shared with /me - tune
- * the reveal there, not here.
+ * PART_STAGGER, and each whole title is pushed back by HOME_STAGGER via
+ * stagger()'s `startDelay`. Both live in lib/reveal.js - tune the reveal there,
+ * not here. HOME_STAGGER is quicker than the GROUP_STAGGER the other pages use,
+ * because five titles at the same spacing take too long to finish arriving.
  *
  * Words, not characters, and that is not a style preference. splitText gives
  * every fragment `display: inline-block`, which ends the text run - so a
@@ -45,7 +46,7 @@ import { useEffect, useRef } from 'react';
 import { animate, stagger } from 'motion';
 import { splitText } from 'motion-plus-dom';
 import NavLink from './NavLink';
-import { GROUP_STAGGER, PART_STAGGER, TRAVEL, SPRING, REDUCED_FADE } from '@/lib/reveal';
+import { HOME_STAGGER, PART_STAGGER, TRAVEL, SPRING, REDUCED_FADE } from '@/lib/reveal';
 
 /* Ported verbatim from pages/index.vue - order is the site's, not alphabetical. */
 const PROJECTS = [
@@ -85,7 +86,7 @@ export default function ProjectList() {
           animate(
             words,
             { opacity: [0, 1], y: [TRAVEL, 0] },
-            { ...SPRING, delay: stagger(PART_STAGGER, { startDelay: index * GROUP_STAGGER }) }
+            { ...SPRING, delay: stagger(PART_STAGGER, { startDelay: index * HOME_STAGGER }) }
           )
         );
       });
