@@ -3,8 +3,9 @@
  * ------------------------------------------------------------------------------
  * Each title is split into words by Motion+'s splitText, then animated up on a
  * spring. Two rhythms are nested: words cascade inside a title every
- * WORD_STAGGER, and each whole title is pushed back by TITLE_STAGGER via
- * stagger()'s `startDelay`.
+ * PART_STAGGER, and each whole title is pushed back by GROUP_STAGGER via
+ * stagger()'s `startDelay`. Both live in lib/reveal.js, shared with /me - tune
+ * the reveal there, not here.
  *
  * Words, not characters, and that is not a style preference. splitText gives
  * every fragment `display: inline-block`, which ends the text run - so a
@@ -44,6 +45,7 @@ import { useEffect, useRef } from 'react';
 import { animate, stagger } from 'motion';
 import { splitText } from 'motion-plus-dom';
 import NavLink from './NavLink';
+import { GROUP_STAGGER, PART_STAGGER, TRAVEL, SPRING, REDUCED_FADE } from '@/lib/reveal';
 
 /* Ported verbatim from pages/index.vue - order is the site's, not alphabetical. */
 const PROJECTS = [
@@ -53,13 +55,6 @@ const PROJECTS = [
   { href: '/tmu', label: 'TMU' },
   { href: '/canadian-business', label: 'Canadian Business' }
 ];
-
-/* The whole feel of the reveal lives in these four values. TITLE_STAGGER is the
- * one to reach for first: at 0.26 the last title starts at 1.04s. */
-const TITLE_STAGGER = 0.26; // seconds between titles
-const WORD_STAGGER = 0.06; // seconds between words within one title
-const TRAVEL = 24; // px each word rises through
-const SPRING = { type: 'spring', visualDuration: 0.9, bounce: 0.2 };
 
 export default function ProjectList() {
   const listRef = useRef(null);
@@ -79,7 +74,7 @@ export default function ProjectList() {
        * what the preference exists to suppress, so this degrades to a plain
        * fade rather than to nothing - gentler, not zero. */
       if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-        playing.push(animate(list, { opacity: [0, 1] }, { duration: 0.2 }));
+        playing.push(animate(list, { opacity: [0, 1] }, REDUCED_FADE));
         list.style.visibility = 'visible';
         return;
       }
@@ -90,7 +85,7 @@ export default function ProjectList() {
           animate(
             words,
             { opacity: [0, 1], y: [TRAVEL, 0] },
-            { ...SPRING, delay: stagger(WORD_STAGGER, { startDelay: index * TITLE_STAGGER }) }
+            { ...SPRING, delay: stagger(PART_STAGGER, { startDelay: index * GROUP_STAGGER }) }
           )
         );
       });

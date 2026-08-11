@@ -4,8 +4,15 @@
  * Intro copy, contact email, and the credit link. The root element keeps its
  * `me` class alongside `page-me`, because `body.me .me` in global.scss is what
  * turns the type white against the blue background.
+ *
+ * StaggerReveal renders that root and reveals the three sections in order on
+ * mount. It is a client component, but the markup stays here and is passed
+ * through as children, so this file remains a server component and keeps its
+ * `metadata` export. The `groups` selector names what counts as a section -
+ * change the markup and change it too.
  */
 
+import StaggerReveal from '@/components/StaggerReveal';
 import './page.scss';
 import { pageMetadata } from '@/lib/page-metadata';
 
@@ -16,7 +23,7 @@ export const metadata = pageMetadata({
 
 export default function Me() {
   return (
-    <div className="page-me me">
+    <StaggerReveal className="page-me me" groups=".intro, .email, .developer">
       <div className="intro">
         <p>
           Graphic Designer &amp; <span>Number One Golden Girls Fan.</span>
@@ -37,6 +44,6 @@ export default function Me() {
           tris.codes
         </a>
       </div>
-    </div>
+    </StaggerReveal>
   );
 }
