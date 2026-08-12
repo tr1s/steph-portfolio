@@ -17,12 +17,12 @@
  * Home gets its own, quicker figure. Stagger is felt as the wait for the last
  * item, not as the gap between any two, so the same 0.2s that reads as
  * unhurried across /me's three sections starts to drag across five project
- * titles - 0.8s before the last one moves. At 0.15 the fifth title starts at
- * 0.6s, which sits closer to how /me feels despite covering more ground.
+ * titles - 0.8s before the last one moves. At 0.12 the fifth title starts at
+ * 0.48s, which sits closer to how /me feels despite covering more ground.
  */
 
 export const GROUP_STAGGER = 0.2; // seconds between groups
-export const HOME_STAGGER = 0.15; // seconds between the five homepage titles
+export const HOME_STAGGER = 0.07; // seconds between the five homepage titles
 export const PART_STAGGER = 0.06; // seconds between parts inside one group
 export const TRAVEL = 24; // px each part rises through
 
