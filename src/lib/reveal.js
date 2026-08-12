@@ -16,9 +16,13 @@
  *
  * Home gets its own, quicker figure. Stagger is felt as the wait for the last
  * item, not as the gap between any two, so the same 0.2s that reads as
- * unhurried across /me's three sections starts to drag across five project
- * titles - 0.8s before the last one moves. At 0.12 the fifth title starts at
- * 0.48s, which sits closer to how /me feels despite covering more ground.
+ * unhurried across /me's three sections drags across five project titles -
+ * 0.8s before the last one even moves.
+ *
+ * The fifth title starts at four times HOME_STAGGER, so 0.07 has the whole list
+ * underway by 0.28s. Well inside the 0.9s each title takes to settle, which is
+ * the point: the arrivals overlap, and the list reads as one gesture travelling
+ * down the page rather than five separate entrances.
  */
 
 export const GROUP_STAGGER = 0.2; // seconds between groups

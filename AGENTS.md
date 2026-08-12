@@ -103,8 +103,11 @@ transforms for layout:
 animate(el, { opacity: [0, 1], translate: ['0px 32px', '0px 0px'] }, SPRING);
 ```
 
-Timing for every reveal lives in `src/lib/reveal.js`. `GROUP_STAGGER` is the one
-knob worth reaching for; change it there, not in a component.
+Timing for every reveal lives in `src/lib/reveal.js` — change it there, not in a
+component. Two knobs carry the pacing: `HOME_STAGGER` spaces the five homepage
+titles, `GROUP_STAGGER` the sections on `/me` and the header on a project page.
+They are separate because five items need a tighter gap than three to finish
+arriving at the same felt pace.
 
 `motion-plus-dom` is depended on directly rather than the `motion-plus` wrapper.
 Both are published by Motion; the wrapper is only distributed through the
