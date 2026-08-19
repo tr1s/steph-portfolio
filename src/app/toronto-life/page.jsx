@@ -45,8 +45,7 @@ export default function TorontoLife() {
       next={{
         href: '/tmu',
         label: 'TMU',
-        image: nextImage,
-        variant: 'pavillion'
+        image: nextImage
       }}
     >
       {/* sizes values mirror the max-width each image gets in page.scss */}

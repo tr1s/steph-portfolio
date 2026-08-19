@@ -45,8 +45,7 @@ export default function CanadianBusiness() {
       next={{
         href: '/top-hat',
         label: 'Top Hat',
-        image: nextImage,
-        variant: 'block'
+        image: nextImage
       }}
     >
       {/* sizes values mirror the max-width each image gets in page.scss */}

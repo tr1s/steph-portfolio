@@ -42,8 +42,7 @@ export default function TopHat() {
       next={{
         href: '/toronto-life',
         label: 'Toronto Life',
-        image: nextImage,
-        variant: 'block'
+        image: nextImage
       }}
     >
       {/* sizes values mirror the max-width each image gets in page.scss */}

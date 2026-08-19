@@ -9,11 +9,10 @@
  * follow is the PROJECTS list in components/ProjectList.jsx, and the last page
  * wraps back to the first.
  *
- * `variant` carries the second class the original markup had ("block"
- * everywhere, "pavillion" on toronto-life). Nothing in the stylesheets targets
- * either - they are dead classes - but they are kept so the DOM matches the old
- * site exactly. The odd name outlived the Pavilion Project page it was named
- * after; it is inert, not a leftover link.
+ * The original markup carried a second class here ("block" on most pages,
+ * "pavillion" on toronto-life). No stylesheet in either codebase ever targeted
+ * them; they were kept only so the DOM matched the old site during the port.
+ * That site is retired, so they are gone.
  *
  * Styled by the `.next-project` rules in styles/global.scss.
  */
@@ -22,9 +21,9 @@ import Image from 'next/image';
 import NavLink from './NavLink';
 import { sizesFor } from '@/lib/image-sizes';
 
-export default function NextProject({ href, label, image, variant }) {
+export default function NextProject({ href, label, image }) {
   return (
-    <div className={`next-project ${variant}`}>
+    <div className="next-project">
       <nav>
         <NavLink href="/me">
           Stephanie <span>Firka</span>

@@ -41,8 +41,7 @@ export default function Tmu() {
       next={{
         href: '/canadian-business',
         label: 'Canadian Business',
-        image: nextImage,
-        variant: 'block'
+        image: nextImage
       }}
     >
       {/* sizes values mirror the max-width each image gets in page.scss */}
