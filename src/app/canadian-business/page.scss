@@ -8,7 +8,7 @@
  * Leans on `img:nth-of-type()` as a DESCENDANT selector, so those rules also
  * match images inside .img-container / .img-container-2 and are then overridden
  * by the :first-child / :last-child rules below. Reordering the JSX will move
- * images between rules - re-run the parity script after any change here.
+ * images between rules - re-screenshot this page after any change here.
  */
 
 .page-canadian-business {

@@ -116,17 +116,19 @@ Motion+ token registry, and `npm i`-ing that URL writes the licence token into
 
 ## Verifying visual changes
 
-This site was ported from Nuxt 2 to be pixel-identical to production. When
-changing anything that affects rendering, screenshot against
-`https://stephfirka.com` and diff, rather than eyeballing it.
+This site was ported from Nuxt 2 to be pixel-identical to the original, and a
+screenshot-diff harness proved it. That harness is gone: it compared against the
+live Nuxt site, and since 2026-08-19 this codebase _is_ the live site, so it had
+nothing left to compare against.
 
-Two things that repeatedly caused false results:
+So when changing anything that affects rendering, capture the page **before and
+after your own change** and diff those, rather than eyeballing it. Two things
+repeatedly caused false results:
 
 - **Lazy loading.** Scroll the whole page and wait for `document.images` to all
-  report `complete` before capturing, or the live site reports a short height.
-- **Device pixel ratio.** Diff at `deviceScaleFactor: 2`. At DPR 1 the live
-  site supersamples oversized images while this one renders correctly-sized
-  ones 1:1, which shows up as sub-1% noise that no real viewer sees.
+  report `complete` before capturing, or the capture comes back short.
+- **Device pixel ratio.** Capture at `deviceScaleFactor: 2`. Hairlines and
+  antialiasing land differently at 1, and no real viewer is at 1.
 
 ## Testing interactive behaviour
 
