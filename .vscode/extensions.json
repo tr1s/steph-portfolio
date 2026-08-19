@@ -1,0 +1,9 @@
+/*
+ * Recommended workspace extensions.
+ * ------------------------------------------------------------------------------
+ * VS Code prompts to install these the first time the project is opened. Both
+ * are required for the on-save behaviour in settings.json to work at all.
+ */
+{
+  "recommendations": ["dbaeumer.vscode-eslint", "esbenp.prettier-vscode"]
+}

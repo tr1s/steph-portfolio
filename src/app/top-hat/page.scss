@@ -1,0 +1,94 @@
+/*
+ * Top Hat - page styles.
+ * ------------------------------------------------------------------------------
+ * Ported from the <style scoped> block of pages/top-hat.vue.
+ * Namespaced under the page's own class, which stands in for Vue's scoping
+ * and reproduces the specificity it gave these rules over global.scss.
+ *
+ * Each `max-width` below is also the number passed to sizesFor() in page.jsx;
+ * change one and change the other.
+ */
+
+.page-top-hat {
+  .content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    .img-container {
+      display: flex;
+      flex-wrap: wrap;
+      @include respond-to('desktop-13') {
+        justify-content: center;
+      }
+      img:first-child {
+        align-self: flex-start;
+        width: 100%;
+        max-width: 408px;
+        position: relative;
+        top: 7rem;
+        left: 16rem;
+        margin-bottom: 10rem;
+        @include respond-to('desktop-13') {
+          left: 0;
+        }
+      }
+      img:last-child {
+        width: 100%;
+        max-width: 565px;
+        margin-bottom: 0;
+        position: relative;
+        left: 19rem;
+        right: 0;
+        @include respond-to('desktop-13') {
+          left: 2rem;
+          right: 0;
+        }
+        @include respond-to('tablet') {
+          left: 0rem;
+        }
+      }
+    }
+    img.image-3 {
+      width: 100%;
+      max-width: 355px;
+      align-self: flex-end;
+      margin-top: 9rem;
+      position: relative;
+      right: 22.6rem;
+      @include respond-to('tablet') {
+        right: 0rem;
+      }
+    }
+    img.image-4 {
+      width: 100%;
+      max-width: 1000px;
+      margin-top: 14rem;
+      position: relative;
+      align-self: flex-end;
+    }
+    img.image-5 {
+      width: 100%;
+      max-width: 956px;
+      margin-top: -7rem;
+      margin-bottom: 25rem;
+      position: relative;
+      right: 26rem;
+      align-self: flex-end;
+      @include respond-to('desktop-13') {
+        right: 0rem;
+        align-self: flex-start;
+        margin-top: 10rem;
+      }
+    }
+    .img-container-2 {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 2.6rem;
+      img {
+        width: 100%;
+        max-width: 414px;
+      }
+    }
+  }
+}

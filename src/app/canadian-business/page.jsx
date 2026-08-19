@@ -1,0 +1,68 @@
+/*
+ * Canadian Business - project page.
+ * ------------------------------------------------------------------------------
+ * Editorial spreads for Canadian Business magazine. Layout comes from
+ * ProjectPage; the per-image positioning is in page.scss, and each sizesFor()
+ * value below is the max-width that image gets there.
+ *
+ * The longest page on the site, and the one whose stylesheet leans hardest on
+ * nth-of-type - check page.scss before reordering anything here.
+ */
+
+import Image from 'next/image';
+import ProjectPage from '@/components/ProjectPage';
+import { sizesFor } from '@/lib/image-sizes';
+import nextImage from '@/images/top-hat.jpg';
+import cb16 from '@/images/canadian-business/CB17_JAN2017_HI-16.jpg';
+import cb17 from '@/images/canadian-business/CB17_JAN2017_HI-17.jpg';
+import bestPackage from '@/images/canadian-business/BestPackagenew.jpg';
+import bestPackage3 from '@/images/canadian-business/BestPackage3new.jpg';
+import ronWhite from '@/images/canadian-business/CB-RonWhite-white.jpg';
+import sum16 from '@/images/canadian-business/CB07-08_SUM2016-HI-16.jpg';
+import sum17 from '@/images/canadian-business/CB07-08_SUM2016-HI-17.jpg';
+import sum20 from '@/images/canadian-business/CB07-08_SUM2016-HI-20.jpg';
+import './page.scss';
+import { pageMetadata } from '@/lib/page-metadata';
+
+export const metadata = pageMetadata({
+  title: 'Canadian Business',
+  path: '/canadian-business/'
+});
+
+const alt = 'Image from Canadian Business magazine designed by Stephanie Firka.';
+
+export default function CanadianBusiness() {
+  return (
+    <ProjectPage
+      pageClass="page-canadian-business"
+      title="Canadian Business"
+      credits={
+        <>
+          <p>Art Director</p>
+          <p>John Montgomery</p>
+        </>
+      }
+      next={{
+        href: '/top-hat',
+        label: 'Top Hat',
+        image: nextImage
+      }}
+    >
+      {/* sizes values mirror the max-width each image gets in page.scss */}
+      <Image src={cb16} alt={alt} placeholder="blur" sizes={sizesFor(1200)} />
+      <Image src={cb17} alt={alt} placeholder="blur" sizes={sizesFor(900)} />
+      <div className="img-container">
+        <Image src={bestPackage} alt={alt} placeholder="blur" sizes={sizesFor(986)} />
+        <Image src={bestPackage3} alt={alt} placeholder="blur" sizes={sizesFor(416)} />
+      </div>
+      <Image src={ronWhite} alt={alt} placeholder="blur" sizes={sizesFor(805)} />
+      <div className="img-container-2">
+        {/* these two go to max-width: 100% at mobile-large, which the
+            100vw branch of sizesFor already covers */}
+        <Image src={sum16} alt={alt} placeholder="blur" sizes={sizesFor(364)} />
+        <Image src={sum17} alt={alt} placeholder="blur" sizes={sizesFor(364)} />
+        <Image src={sum20} alt={alt} placeholder="blur" sizes={sizesFor(791)} />
+      </div>
+    </ProjectPage>
+  );
+}

@@ -1,0 +1,109 @@
+/*
+ * Component styles.
+ * ------------------------------------------------------------------------------
+ * Ported from the <style scoped> blocks of components/Header.vue and
+ * components/Footer.vue, plus the unscoped .wrapper rule from
+ * layouts/default.vue.
+ *
+ * These stay global rather than becoming CSS Modules because global.scss
+ * reaches into this markup by name (`.me nav a`, `.golden-girls footer a`,
+ * `.home nav .line::before`, `.exact-active-link`). Hashed class names would
+ * silently break every one of those selectors.
+ *
+ * Instead each block is anchored to its element so it cannot leak into the
+ * other <nav>/<footer> pair that NextProject renders - which is what Vue's
+ * scoping used to prevent.
+ */
+
+/* Layout wrapper
+================================================
+   From the unscoped <style> block in layouts/default.vue. The flex column plus
+   space-between is what pins the header to the top and the footer to the
+   bottom on the three routes that render one. */
+
+.wrapper {
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Header
+================================================ */
+
+header {
+  .exact-active-link {
+    letter-spacing: 8px;
+  }
+
+  nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 5rem;
+    position: relative;
+    @include respond-to('mobile-large') {
+      margin-top: 4rem;
+    }
+    @include respond-to('mobile-small') {
+      margin-top: 3rem;
+    }
+    a {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-size: 1.1rem;
+      letter-spacing: 0.261rem;
+      line-height: 1.3rem;
+      text-transform: uppercase;
+      margin-bottom: 3.5rem;
+      transition: 0.3s all ease;
+    }
+    a:hover,
+    a:focus {
+      letter-spacing: 8px;
+      transition: 0.3s all ease;
+    }
+    span {
+      display: table;
+    }
+  }
+}
+
+/* Footer
+================================================
+   Anchored to the layout's own footer (.wrapper > div > footer) so it never
+   matches the footer.footer nested inside .next-project on project pages. */
+
+.wrapper > div > footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 5rem;
+  @include respond-to('mobile-large') {
+    margin-bottom: 4rem;
+  }
+  @include respond-to('mobile-small') {
+    margin-bottom: 3rem;
+  }
+  a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1.1rem;
+    letter-spacing: 0.261rem;
+    line-height: 1.3rem;
+    text-transform: uppercase;
+    transition: 0.3s all ease;
+  }
+  a:hover,
+  a:focus {
+    letter-spacing: 8px;
+    transition: 0.3s all ease;
+  }
+  span {
+    display: table;
+  }
+}

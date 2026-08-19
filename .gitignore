@@ -81,10 +81,17 @@ dist
 .idea
 
 # Service worker
+# This rule existed to ignore the worker @nuxtjs/pwa generated into static/.
+# public/sw.js is committed on purpose: it is the kill-switch that retires that
+# old worker from returning visitors' browsers. It is source, not build output.
 sw.*
+!public/sw.js
 
 # macOS
 .DS_Store
 
 # Vim swap files
 *.swp
+
+# Visual-parity screenshots and diffs — regenerated on demand.
+scripts/visual-parity/out/

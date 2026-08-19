@@ -1,0 +1,57 @@
+/*
+ * Home - page styles.
+ * ------------------------------------------------------------------------------
+ * Ported from the <style scoped> block of pages/index.vue.
+ * Namespaced under the page's own class, which stands in for Vue's scoping
+ * and reproduces the specificity it gave these rules over global.scss.
+ *
+ * The project list. Sizes step down through four breakpoints, including a
+ * one-off 549px query that predates the respond-to() scale.
+ *
+ * `visibility: hidden` below is the start state of the staggered reveal in
+ * components/ProjectList.jsx, which flips it inline once the fonts have
+ * settled. It hides rather than collapses, so the list keeps its box and the
+ * footer never moves. See that file's header for the rest.
+ */
+
+.page-home {
+  .projects {
+    // Revealed by ProjectList once splitText has run. The <noscript> block in
+    // that component overrides this so a JS-less visitor still sees the titles.
+    visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    letter-spacing: 0.1rem;
+    font-size: 9rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    @include respond-to('tablet') {
+      font-size: 6.9rem;
+    }
+    @media (max-width: 549px) {
+      font-size: 4.4rem;
+    }
+    @include respond-to('mobile-large') {
+      font-size: 4rem;
+    }
+    @include respond-to('mobile-small') {
+      font-size: 3.8rem;
+    }
+  }
+  ul li {
+    margin-top: -0.5rem;
+    margin-bottom: -0.5rem;
+  }
+  ul li a {
+    text-decoration: none;
+    font-family: $font-heading;
+    color: #000;
+  }
+  ul li a:hover,
+  ul li a:focus {
+    color: #0000f9;
+  }
+}

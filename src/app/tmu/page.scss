@@ -1,0 +1,57 @@
+/*
+ * TMU - page styles.
+ * ------------------------------------------------------------------------------
+ * Ported from the <style scoped> block of pages/tmu.vue.
+ * Namespaced under the page's own class, which stands in for Vue's scoping
+ * and reproduces the specificity it gave these rules over global.scss.
+ *
+ * Each `max-width` below is also the number passed to sizesFor() in page.jsx;
+ * change one and change the other.
+ */
+
+.page-tmu {
+  .content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    img.image-1 {
+      width: 100%;
+      max-width: 730px;
+      align-self: flex-end;
+      margin-right: 6rem;
+      margin-bottom: 20rem;
+      @include respond-to('desktop-13') {
+        margin-right: 0;
+      }
+      @include respond-to('mobile-large') {
+        margin-bottom: 10rem;
+      }
+    }
+    img.image-2 {
+      width: 100%;
+      max-width: 1240px;
+      align-self: flex-start;
+      margin-bottom: 8rem;
+    }
+    .img-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      margin-left: 8rem;
+      margin-bottom: 25rem;
+      img {
+        width: 100%;
+        max-width: 308px;
+      }
+    }
+    img.image-6 {
+      width: 100%;
+      max-width: 1200px;
+      align-self: flex-end;
+      margin-bottom: 20rem;
+      @include respond-to('mobile-large') {
+        margin-bottom: 10rem;
+      }
+    }
+  }
+}
