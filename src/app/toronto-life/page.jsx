@@ -12,7 +12,7 @@
 import Image from 'next/image';
 import ProjectPage from '@/components/ProjectPage';
 import { sizesFor } from '@/lib/image-sizes';
-import nextImage from '@/images/top-hat.jpg';
+import nextImage from '@/images/tmu.jpg';
 import tl01 from '@/images/toronto-life/TL-01.jpg';
 import tl02 from '@/images/toronto-life/TL-02.jpg';
 import tl03 from '@/images/toronto-life/TL-03.jpg';
@@ -43,8 +43,8 @@ export default function TorontoLife() {
         </div>
       }
       next={{
-        href: '/top-hat',
-        label: 'Top Hat',
+        href: '/tmu',
+        label: 'TMU',
         image: nextImage,
         variant: 'pavillion'
       }}

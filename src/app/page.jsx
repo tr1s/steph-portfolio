@@ -1,7 +1,7 @@
 /*
  * Home - the project index.
  * ------------------------------------------------------------------------------
- * The five project names, set large, and nothing else. The header and footer
+ * The project names, set large, and nothing else. The header and footer
  * come from Shell; `body.home` in global.scss paints the cream background.
  *
  * The list itself lives in ProjectList, which is a client component because it

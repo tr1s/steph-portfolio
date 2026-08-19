@@ -1,12 +1,13 @@
 /*
- * The five project titles, revealed on a stagger.
+ * The four project titles, revealed on a stagger.
  * ------------------------------------------------------------------------------
  * Each title is split into words by Motion+'s splitText, then animated up on a
  * spring. Two rhythms are nested: words cascade inside a title every
  * PART_STAGGER, and each whole title is pushed back by HOME_STAGGER via
  * stagger()'s `startDelay`. Both live in lib/reveal.js - tune the reveal there,
  * not here. HOME_STAGGER is quicker than the GROUP_STAGGER the other pages use,
- * because five titles at the same spacing take too long to finish arriving.
+ * because a run of titles at the same spacing takes too long to finish
+ * arriving.
  *
  * Words, not characters, and that is not a style preference. splitText gives
  * every fragment `display: inline-block`, which ends the text run - so a
@@ -48,13 +49,15 @@ import { splitText } from 'motion-plus-dom';
 import NavLink from './NavLink';
 import { HOME_STAGGER, PART_STAGGER, TRAVEL, SPRING, REDUCED_FADE } from '@/lib/reveal';
 
-/* Ported verbatim from pages/index.vue - order is the site's, not alphabetical. */
+/* Stephanie's order, not alphabetical. This list is the site's running order:
+ * the `next` block at the foot of each project page follows it and wraps from
+ * the last title back to the first, so reordering here means rewiring those
+ * too. */
 const PROJECTS = [
   { href: '/toronto-life', label: 'Toronto Life' },
-  { href: '/top-hat', label: 'Top Hat' },
-  { href: '/pavilion-project', label: 'Pavilion Project' },
   { href: '/tmu', label: 'TMU' },
-  { href: '/canadian-business', label: 'Canadian Business' }
+  { href: '/canadian-business', label: 'Canadian Business' },
+  { href: '/top-hat', label: 'Top Hat' }
 ];
 
 export default function ProjectList() {

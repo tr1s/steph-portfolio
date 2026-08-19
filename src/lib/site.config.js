@@ -37,10 +37,9 @@ export const siteConfig = {
   routes: [
     '/',
     '/toronto-life/',
-    '/top-hat/',
-    '/pavilion-project/',
     '/tmu/',
     '/canadian-business/',
+    '/top-hat/',
     '/me/',
     '/golden-girls/'
   ]

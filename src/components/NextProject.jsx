@@ -3,12 +3,17 @@
  * ------------------------------------------------------------------------------
  * Closes every project page: its own nav, a dimmed preview image, the big link
  * onward, and a second Golden Girls footer. This markup was duplicated verbatim
- * in all five .vue project pages.
+ * in every .vue project page.
  *
- * `variant` carries the second class the original markup had ("block" on four
- * pages, "pavillion" on toronto-life). Nothing in the stylesheets targets
+ * `href`/`label`/`image` come from the page above; the running order they
+ * follow is the PROJECTS list in components/ProjectList.jsx, and the last page
+ * wraps back to the first.
+ *
+ * `variant` carries the second class the original markup had ("block"
+ * everywhere, "pavillion" on toronto-life). Nothing in the stylesheets targets
  * either - they are dead classes - but they are kept so the DOM matches the old
- * site exactly.
+ * site exactly. The odd name outlived the Pavilion Project page it was named
+ * after; it is inert, not a leftover link.
  *
  * Styled by the `.next-project` rules in styles/global.scss.
  */

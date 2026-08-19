@@ -6,8 +6,15 @@ description: How to build, run, and visually verify changes to the Stephanie Fir
 # Verifying changes in this repo
 
 This site is a port of a Nuxt 2 site that is **still live at
-https://stephfirka.com**. Production is the reference implementation: until the
-DNS cutover, any rendering difference is a bug in this repo, not in production.
+https://stephfirka.com**. Production is the reference implementation for
+_rendering_: until the DNS cutover, any styling, layout or type difference is a
+bug in this repo, not in production.
+
+It is no longer the reference for _content_. Stephanie retired the Pavilion
+Project in August 2026 and reset the running order to Toronto Life, TMU,
+Canadian Business, Top Hat. Production still shows the old five in the old
+order, so see "Deliberate content divergence" below before reading a parity
+failure as a regression.
 
 ## Build / lint
 
@@ -51,6 +58,26 @@ Node prints a `MODULE_TYPELESS_PACKAGE_JSON` warning when the script imports
 one to silence a cosmetic warning in an occasional script isn't worth the blast
 radius.
 
+### Deliberate content divergence
+
+Until production is redeployed, these routes are _meant_ to differ from it:
+
+- `/` — four titles, not five, and in a different order. A full-page diff here
+  is expected; what still has to hold is the type, the cream background and the
+  footer's position.
+- every project page's `.next-project` block — the label, link and preview image
+  all moved when the chain was rewired. The spreads above it are unchanged and
+  should still diff clean.
+- `/pavilion-project/` — gone. Requesting it locally 308s to `/`; on production
+  it still renders. `compare.mjs` no longer visits it, since routes come from
+  `site.config.js`.
+
+The running order lives in one place, `PROJECTS` in `components/ProjectList.jsx`.
+Each project page's `next` prop follows it and the last page wraps to the first,
+so changing that list means rewiring those props by hand — nothing derives them.
+Walk the chain in a browser after any reorder; a typo leaves a project
+unreachable from the page before it, which no build or lint step will catch.
+
 ### Expected, non-zero differences
 
 Since images gained `sizes` props, production and this site no longer fetch the
@@ -89,8 +116,10 @@ These each produced a false result at least once. Trust them.
 
 ## Regenerating the OG image
 
-`public/seo/og-default.jpg` is a capture of the site's own home page. If the home
-page changes, regenerate it: screenshot `/` at **1600x840** with
+`public/seo/og-default.jpg` is a capture of the site's own home page — so it
+lists the project names, and goes stale the moment that list changes. It was
+last regenerated when Pavilion Project came out. If the home page changes,
+regenerate it: screenshot `/` at **1600x840** with
 `deviceScaleFactor: 2`, then downscale to 1200x630
 (`sips -s format jpeg -s formatOptions 82 -z 630 1200 in.png --out out.jpg`).
 Capturing at 1200x630 directly clips the last project name.

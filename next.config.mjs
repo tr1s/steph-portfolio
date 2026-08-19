@@ -1,10 +1,11 @@
 /*
  * Next.js build and runtime configuration.
  * ------------------------------------------------------------------------------
- * Owns three things the rest of the app depends on: the trailing-slash URL
+ * Owns four things the rest of the app depends on: the trailing-slash URL
  * shape inherited from the Nuxt site, the Sass globals that replace
- * @nuxtjs/style-resources, and the no-cache header that lets public/sw.js
- * retire the old service worker.
+ * @nuxtjs/style-resources, the no-cache header that lets public/sw.js retire
+ * the old service worker, and the redirect for the one project page that has
+ * been taken down.
  */
 
 /** @type {import('next').NextConfig} */
@@ -19,6 +20,26 @@ const nextConfig = {
     // the "@/" jsconfig alias is JS-only and does not resolve in Sass.
     loadPaths: ['./src'],
     additionalData: `@use "styles/abstracts" as *;`
+  },
+  async redirects() {
+    return [
+      {
+        // /pavilion-project/ was live on the Nuxt site for years and is still
+        // indexed and linked. Stephanie retired the project in August 2026, so
+        // send the URL to the project index rather than let it 404. 308 (the
+        // method-preserving permanent redirect Next uses in place of 301) tells
+        // search engines the page is gone for good.
+        //
+        // Source is written without the trailing slash - `trailingSlash: true`
+        // rejects a source that has one. Inbound links use the canonical
+        // /pavilion-project/ and land on home in a single hop; the bare
+        // /pavilion-project takes two, picking up the trailing-slash 308 first.
+        // Verified against `npm start`.
+        source: '/pavilion-project',
+        destination: '/',
+        permanent: true
+      }
+    ];
   },
   async headers() {
     return [

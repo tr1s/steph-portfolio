@@ -1,5 +1,5 @@
 /*
- * Shared shell for the five project pages.
+ * Shared shell for the project pages.
  * ------------------------------------------------------------------------------
  * Title, credits, the image column, then the next-project block. Reproduces the
  * markup of the old .vue pages exactly:

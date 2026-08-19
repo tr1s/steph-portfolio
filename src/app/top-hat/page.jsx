@@ -9,7 +9,7 @@
 import Image from 'next/image';
 import ProjectPage from '@/components/ProjectPage';
 import { sizesFor } from '@/lib/image-sizes';
-import nextImage from '@/images/pavilion-project.jpg';
+import nextImage from '@/images/toronto-life.jpg';
 import th01 from '@/images/top-hat/TH-01.jpg';
 import th02 from '@/images/top-hat/TH-02.jpg';
 import th03 from '@/images/top-hat/TH-03.jpg';
@@ -40,8 +40,8 @@ export default function TopHat() {
         </>
       }
       next={{
-        href: '/pavilion-project',
-        label: 'Pavilion Project',
+        href: '/toronto-life',
+        label: 'Toronto Life',
         image: nextImage,
         variant: 'block'
       }}

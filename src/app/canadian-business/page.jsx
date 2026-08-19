@@ -12,7 +12,7 @@
 import Image from 'next/image';
 import ProjectPage from '@/components/ProjectPage';
 import { sizesFor } from '@/lib/image-sizes';
-import nextImage from '@/images/toronto-life.jpg';
+import nextImage from '@/images/top-hat.jpg';
 import cb16 from '@/images/canadian-business/CB17_JAN2017_HI-16.jpg';
 import cb17 from '@/images/canadian-business/CB17_JAN2017_HI-17.jpg';
 import bestPackage from '@/images/canadian-business/BestPackagenew.jpg';
@@ -43,8 +43,8 @@ export default function CanadianBusiness() {
         </>
       }
       next={{
-        href: '/toronto-life',
-        label: 'Toronto Life',
+        href: '/top-hat',
+        label: 'Top Hat',
         image: nextImage,
         variant: 'block'
       }}
